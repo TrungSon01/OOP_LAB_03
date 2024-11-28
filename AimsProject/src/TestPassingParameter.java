@@ -19,8 +19,6 @@ public class TestPassingParameter {
       o1.setTitle(o2.getTitle());
       o2.setTitle(tmp);
    }
-
- 
    public static void changeTitle(DigitalVideoDisc dvd, String title) {
       dvd.setTitle(title);
    }
