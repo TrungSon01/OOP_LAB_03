@@ -14,6 +14,64 @@ public int addDigitalVideoDisc(DigitalVideoDisc disc) {
         return 1;
     }
 }
+//với tham số là 1 mảng 
+//public int addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+//    int addedCount = 0;
+//    for (DigitalVideoDisc disc : dvdList) {
+//        if (qtyOrdered == MAX_NUMBERS_ORDERED) {
+//            System.out.println("The cart is full. Can't add more DVDs.");
+//            break;
+//        } else {
+//            itemsOrdered[qtyOrdered] = disc;
+//            qtyOrdered++;
+//            System.out.println("The DVD " + '\"' + disc.getTitle() + '\"' + " has been added!");
+//            addedCount++;
+//        }
+//    }
+//    return addedCount; // Trả về số lượng DVD đã thêm thành công.
+//}
+
+public int addDigitalVideoDisc(DigitalVideoDisc... dvdList) {
+    int addedCount = 0;
+    for (DigitalVideoDisc disc : dvdList) {
+        if (qtyOrdered == MAX_NUMBERS_ORDERED) {
+            System.out.println("The cart is full. Can't add more DVDs.");
+            break;
+        } else {
+            itemsOrdered[qtyOrdered] = disc;
+            qtyOrdered++;
+            System.out.println("The DVD " + '\"' + disc.getTitle() + '\"' + " has been added!");
+            addedCount++;
+        }
+    }
+    return addedCount; 
+}
+
+public int addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) { // thêm 2 đĩa 
+    int addedCount = 0;
+
+
+    if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+        itemsOrdered[qtyOrdered] = dvd1;
+        qtyOrdered++;
+        System.out.println("The DVD " + '\"' + dvd1.getTitle() + '\"' + " has been added!");
+        addedCount++;
+    } else {
+        System.out.println("The cart is full. Can't add DVD: " + dvd1.getTitle());
+    }
+
+
+    if (qtyOrdered < MAX_NUMBERS_ORDERED) {
+        itemsOrdered[qtyOrdered] = dvd2;
+        qtyOrdered++;
+        System.out.println("The DVD " + '\"' + dvd2.getTitle() + '\"' + " has been added!");
+        addedCount++;
+    } else {
+        System.out.println("The cart is full. Can't add DVD: " + dvd2.getTitle());
+    }
+
+    return addedCount; // Trả về số lượng DVD đã thêm thành công.
+}
 
 public int removeDigitalVideoDisc(DigitalVideoDisc disc) {
     if (itemsOrdered[0] == null) {
