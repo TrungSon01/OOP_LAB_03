@@ -44,5 +44,7 @@ public int getLength() {
 public float getCost() {
 	return cost;
 }
-
+public void setTitle(String title) {
+    this.title = title;
+ }
 }
