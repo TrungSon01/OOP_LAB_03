@@ -1,0 +1,7 @@
+
+câu 1 Khi ghi đè phương  thức equals() của  lớp Object, bạn sẽ phải truyền tham số Object obj sang loại Object  mà bạn đang xử lý. Ví dụ: trong  lớp Media, bạn phải truyền Object  obj thành Media, sau đó kiểm tra sự bình đẳng của các thuộc tính của hai đối tượng như các yêu cầu trên (tức là tiêu đề cho Media; tiêu đề và độ dài cho Track). Nếu đối tượng đi qua không phải là một thực thể của Media, điều gì sẽ xảy ra?
+
+=>  Nếu đối tượng được truyền vào phương thức equals() không phải là một thực thể của Media, phương thức sẽ trả về false thay vì cố gắng so sánh . Nếu không kiểm tra và cố gắng ép kiểu trực tiếp, chương trình sẽ gây lỗi runtime
+
+
+
